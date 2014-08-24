@@ -1,4 +1,5 @@
-## makeCacheMatrix() creates a special matrix object with set,get,setinverse and getinverse methods
+## makeCacheMatrix() creates a special matrix object.
+## It creates four methods set,get,setinverse and getinverse
 
 makeCacheMatrix <- function(x = matrix()) {
   inv_x <- NULL
@@ -19,7 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
   inv_x <- x$getinverse()
   if(!is.null(inv_x)) {
-    message("getting cached data.")
+    message("pulling from cache.")
     return(inv_x)
   }
   data <- x$get()
